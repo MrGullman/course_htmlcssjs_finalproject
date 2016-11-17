@@ -1,6 +1,6 @@
 # About: School project - Web design
 #### Purpose: Showcase one's ability with different technologies
-##### Technologies: HTML5, CSS3, Javascript, JQuery, JQuery UI, Bootstrap 3
+##### Technologies: HTML5, CSS3, Javascript, JQuery, Bootstrap 3
 
 ###### Installation example:
 <pre>git clone https://github.com/mow-github/course_htmlcssjs_finalproject.git</pre>
