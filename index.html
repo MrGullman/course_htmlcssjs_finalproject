@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="School project - Web design">
+  <meta name="keywords" content="html5, css3, js, jquery, bootstrap 3">
+  <meta name="author" content="Mats Wikmar">
+  <title>JavaScript Skolan</title>
+  <link rel="icon" href="img/favicon.ico">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Federo" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+  <script src="js/jquery_bs3.min.js" defer></script>
+  <script src="js/custom.js" defer></script>
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<div class="container">
+  <!--header: image logo-->
+  <header class="row">
+    <div class="col-xs-12">
+      <img class="img-responsive" id="bg_img1" src="img/js_bg1.svg" alt="Background image that displays the logo for the site">
+    </div>
+  </header>
+  <!--Separator-header: Innehåll-->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="separator">
+        <h3 id="mainContentMenu">Innehåll</h3>
+      </div>
+    </div>
+  </div>
+  <!--Content for parent or child image links-->
+  <div class="row" id="contentParent"><!-- dynamic data here --></div>
+  <div class="row" id="contentChild"><!-- dynamic data here --></div>
+  <!-- main content about a subject -->
+  <div class="row" id="mainContentParent">
+    <div class="col-xs-12">
+      <div class="separator">
+        <h3 class="separatorContainer">.<!--dynamic data--></h3>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <h3 id="mainContentHead">.<!--dynamic data--></h3>
+      <div id="mainContentText">.<!--dynamic data--></div>
+      <div><h4 id="gotomainContentMenu">Tillbaka till innehåll</h4></div>
+    </div>
+  </div>
+</div> <!--end container-->
+
+<footer class="container">
+  <!--Separator-header: Kontakta oss-->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="separator">
+        <h3>Kontakta oss</h3>
+      </div>
+    </div>
+  </div>
+  <!--Left column with adress info (1 row if xs)-->
+  <div class="row">
+    <div class="col-sm-6">
+      <address>JavaScript Skolan
+        <p>12345, JS staden</p>
+        <p><span class="glyphicon glyphicon-envelope"></span><a href="mailto:info@jsskolan.se"> info@jsskolan.se</a></p>
+        <p><span class="glyphicon glyphicon-phone"></span><a href="tel:+123456789"> 123-456-789</a></p>
+      </address>
+    </div>
+    <!--right column with form (1 row if xs)-->
+    <div class="col-sm-6">
+      <form class="form-horizontal" id="footerForm">
+        <div class="form-group">
+          <label for="email" class="col-sm-3 control-label">E-post</label>
+          <div class="col-sm-9">
+            <!-- Note: replaced type with text.. so one can check against the custom js validator -->
+            <input class="form-control" id="email" type="text" placeholder="Ange din E-post" value="question@jsskolan.se"
+                   title="Ange en giltig e-post" pattern="[A-Za-z@.]{3,}" required data-toggle="tooltip" data-placement="bottom">
+            <div class="alert"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="textarea" class="col-sm-3 control-label">Meddelande</label>
+          <div class="col-sm-9">
+            <textarea class="form-control" id="textarea" placeholder="Ange ditt meddelande" title="Ange ditt meddelande"
+                      required data-toggle="tooltip" data-placement="bottom">Hej, jag skulle vara tacksam ifall du kunde hjälpa mig med följande fråga... Kan jag använda let istället för var?</textarea>
+            <div class="alert"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-9 col-sm-offset-3">
+            <button type="submit" class="btn btn-success btn-block">Skicka fråga</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</footer>
+
+<aside class="container">
+  <!--Separator-header: Kontakta oss-->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="separator">
+        <h3>Diskutera</h3>
+      </div>
+    </div>
+  </div>
+<!--Discussion about the site-->
+  <div class="row">
+    <!--discussion content-->
+    <div id="asideContainer">
+      <div class="col-xs-12">
+        <div class="media">
+          <div class="media-left media-middle">
+            <a href="#">
+              <img class="media-object" src="img/js_bg.svg" alt="img/js_bg.svg">
+            </a>
+          </div>
+          <div class="media-body">
+            <p>Tjo, kan någon förklara skillanden på t.ex.<code>var x = 1;</code> och <code>let x = 1;</code> tack</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--write message and post in the discussion thread-->
+    <div class="col-xs-12">
+      <form class="form-horizontal" id="asideForm">
+        <div class="form-group">
+          <label for="d_textarea" class="col-sm-3 control-label">Meddelande</label>
+          <div class="col-sm-9">
+                <textarea class="form-control" id="d_textarea" placeholder="Ange ditt meddelande" title="Ange ditt meddelande"
+                          required data-toggle="tooltip" data-placement="bottom"><code>let</code> är ett nytt nyckelord i och med standarden ecmascript 6.. som i princip ersätter <code>var</code><p>Läs gärna mera om det på : <a
+                  href="http://stackoverflow.com/questions/762011/let-keyword-vs-var-keyword-in-javascript">stackoverflow</a></p></textarea>
+            <div class="alert"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-9 col-sm-offset-3">
+            <button type="submit" class="btn btn-success btn-block">Skapa inlägg</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  </div>
+</aside> <!--end container-->
+
+<!-- Modal: confirm msg kontakta oss -->
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Tack för din fråga</h4>
+      </div>
+      <div class="modal-body">
+        Vi återkommer till dig inom 24h
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Stäng</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- outside the normal layout (goHome btn)-->
+<span class="glyphicon glyphicon-home" id="homeBtn"></span>
+
+</body>
+</html>
