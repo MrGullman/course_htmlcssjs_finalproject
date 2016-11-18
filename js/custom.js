@@ -270,7 +270,7 @@ $(document).ready(function () {
      * */
     createContent: function(container,key,obj){
       let divOuter = document.createElement("div");
-      divOuter.className = "col-xs-12 col-sm-4";
+      divOuter.className = "col-xs-12 col-sm-6 col-md-4";
       let divInner = document.createElement("div");
       divInner.className = "content";
         if( container === "contentParent" ){
