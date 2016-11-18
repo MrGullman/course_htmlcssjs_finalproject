@@ -29,3 +29,4 @@
 
 > _"Failure is just a symptom for success"_
 [link to my homepage - bviking.se ](https://www.bviking.se)
+[link to my LinkedIn profile ](https://www.linkedin.com/in/mats-wikmar)
